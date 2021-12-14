@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import com.julio.latterstosaraswati.R
 
 
+
 class CreateAnAccountFragment : Fragment() {
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -17,6 +20,17 @@ class CreateAnAccountFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_create_an_account, container, false)
     }
+
+    //TODO: Replace it with MVVM patter (viewModelClass)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+
+
+
+
+    }
+
 
 
 }

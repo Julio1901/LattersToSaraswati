@@ -9,5 +9,14 @@
         android:id="@+id/loginFragment"
         android:name="com.julio.latterstosaraswati.fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_login_to_create_an_account"
+            app:destination="@id/createAnAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/createAnAccountFragment"
+        android:name="com.julio.latterstosaraswati.fragments.CreateAnAccountFragment"
+        android:label="fragment_create_an_account"
+        tools:layout="@layout/fragment_create_an_account" />
 </navigation>
