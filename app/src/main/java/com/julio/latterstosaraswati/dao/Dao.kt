@@ -10,7 +10,7 @@ interface Dao {
     //TODO: Make query's SQL here
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun registerUser(user: UserEntity) : Long
+    suspend fun registerUser(user: UserEntity)
 
     @Query("SELECT * FROM user_table WHERE user_name like:userName")
     fun getUserInDb(userName : String) : UserEntity

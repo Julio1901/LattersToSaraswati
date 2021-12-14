@@ -11,14 +11,8 @@ class UserRepository (context: Context) {
     val daoInstance = dbInstance.dao()
 
 
-    suspend fun registerNewUser(newUser : UserEntity) : Long{
-
-        try {
-              return daoInstance.registerUser(newUser)
-        }catch (e : Exception){
-            Log.d("Registration error", e.toString())
-            return 0
-        }
+    suspend fun registerNewUser(newUser : UserEntity) {
+        daoInstance.registerUser(newUser)
     }
 
     suspend fun getUserInDb(name : String) : UserEntity?{
