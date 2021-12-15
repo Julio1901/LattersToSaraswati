@@ -13,6 +13,6 @@ interface Dao {
     suspend fun registerUser(user: UserEntity)
 
     @Query("SELECT * FROM user_table WHERE user_name like:userName")
-    fun getUserInDb(userName : String) : UserEntity
+    suspend fun getUserInDb(userName : String) : UserEntity
 
 }

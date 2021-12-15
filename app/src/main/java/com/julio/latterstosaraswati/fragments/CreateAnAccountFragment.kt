@@ -45,7 +45,6 @@ class CreateAnAccountFragment : Fragment() {
         val btnCreateUser : Button = binding.btnCreateUser
 
         btnCreateUser.setOnClickListener {
-            //val mockUser = UserEntity("Mock user two", "mockuser@gmail.com", "mock123")
             val userName = binding.editTextCreateUserName.text.toString()
             val email = binding.editTextCreateEmail.text.toString()
             val password = binding.editTextCreatePassword.text.toString()

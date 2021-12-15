@@ -15,13 +15,7 @@ class UserRepository (context: Context) {
         daoInstance.registerUser(newUser)
     }
 
-    suspend fun getUserInDb(name : String) : UserEntity?{
-        try {
+    suspend fun getUserInDb(name : String) : UserEntity{
             return daoInstance.getUserInDb(name)
-        }catch (e: Exception){
-            Log.d("Impossible to find user", e.toString())
-            return null
-        }
     }
-
 }

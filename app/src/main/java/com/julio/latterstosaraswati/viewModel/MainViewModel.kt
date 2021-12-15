@@ -9,6 +9,9 @@ import kotlinx.coroutines.launch
 
 class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
+    var login = false
+
+
     //Database functions
 
     fun createNewUser(newUser : UserEntity){
@@ -22,7 +25,18 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
         }
     }
 
+    fun login(userName: String, password: String) {
 
-
+        viewModelScope.launch {
+            try {
+                val response = userRepository.getUserInDb(userName)
+                if (response.password == password){
+                    login = true
+                }
+            }catch (e: Exception){
+                Log.d("Error getting user", e.toString())
+            }
+        }
+    }
 
 }
