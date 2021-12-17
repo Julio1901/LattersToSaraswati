@@ -2,4 +2,6 @@
     <string name="app_name">LattersToSaraswati</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="exemplePhrase">“Entre estímulo e resposta há um espaço. Nesse espaço está nosso poder de escolher nossa resposta. E é nela que reside o crescimento e nossa liberdade”
+        <br><br>-Viktor Frankl</br>br</br></string>
 </resources>

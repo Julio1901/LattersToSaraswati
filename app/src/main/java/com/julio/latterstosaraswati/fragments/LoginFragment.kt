@@ -1,12 +1,16 @@
 package com.julio.latterstosaraswati.fragments
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.julio.latterstosaraswati.R
@@ -52,6 +56,7 @@ class LoginFragment : Fragment() {
             val password = binding.editTextPassword.text.toString()
 
             mainViewModel.login(name, password)
+            view.context.hideKeyboard(view)
 
         }
 
@@ -59,10 +64,39 @@ class LoginFragment : Fragment() {
             if (it){
                 val action = LoginFragmentDirections.actionLoginToHome()
                 findNavController().navigate(action)
+                //TODO: Create an function to restore default value
                 //Restore default
                 mainViewModel.mutableLogin.value = false
+                binding.editTextUserName.setText("")
+                binding.editTextPassword.setText("")
+                binding.textViewLoginError.setTextColor(resources.getColor(R.color.transparent))
+            } else{
+                binding.textViewLoginError.setTextColor(resources.getColor(R.color.red_alert))
             }
         })
+        binding.editTextUserName.setOnClickListener{
+          binding.textViewLoginError.setTextColor(resources.getColor(R.color.transparent))
+        }
+        binding.editTextPassword.setOnClickListener{
+            binding.textViewLoginError.setTextColor(resources.getColor(R.color.transparent))
+        }
+
+        //Hide keyboard on screen click
+        view.setOnClickListener {
+            view.context.hideKeyboard(view)
+        }
+
+    }
+
+    fun Context.hideKeyboard(view: View) {
+        val inputMethodManager = getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+        inputMethodManager.hideSoftInputFromWindow(view.windowToken, 0)
+    }
+
+    //makes the error message transparent if the user goes back to the login screen
+    override fun onResume() {
+        super.onResume()
+        binding.textViewLoginError.setTextColor(resources.getColor(R.color.transparent))
     }
 
 

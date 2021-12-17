@@ -21,7 +21,11 @@
         android:id="@+id/createAnAccountFragment"
         android:name="com.julio.latterstosaraswati.fragments.CreateAnAccountFragment"
         android:label="fragment_create_an_account"
-        tools:layout="@layout/fragment_create_an_account" />
+        tools:layout="@layout/fragment_create_an_account" >
+        <action
+            android:id="@+id/action_createAnAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.julio.latterstosaraswati.fragments.HomeFragment"

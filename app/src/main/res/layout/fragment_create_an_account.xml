@@ -58,4 +58,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_text_create_password"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_error_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This field is mandatory."
+        android:textColor="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_create_user_name"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_create_user_name"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_create_user_name" />
+
+    <TextView
+        android:id="@+id/textView_error_email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This field is mandatory"
+        android:textColor="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_create_email"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_create_email"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_create_email" />
+
+    <TextView
+        android:id="@+id/textView_error_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="This field is mandatory"
+        android:textColor="@color/transparent"
+        app:layout_constraintBottom_toTopOf="@+id/edit_text_create_password"
+        app:layout_constraintEnd_toEndOf="@+id/edit_text_create_password"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/edit_text_create_password" />
 </androidx.constraintlayout.widget.ConstraintLayout>

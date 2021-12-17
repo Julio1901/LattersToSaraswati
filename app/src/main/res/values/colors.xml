@@ -10,5 +10,6 @@
     <color name="blue_calm">#ADD8E6</color>
     <color name="red_alert">#FB2626</color>
     <color name="hint_default_color">#9F9F9F</color>
+    <color name="transparent">#00FFFFFF</color>
 
 </resources>

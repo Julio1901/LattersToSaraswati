@@ -35,6 +35,7 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
                 mutableLogin.value = response.password == password
             }catch (e: Exception){
                 Log.d("Error getting user", e.toString())
+                mutableLogin.value = false
             }
         }
     }
