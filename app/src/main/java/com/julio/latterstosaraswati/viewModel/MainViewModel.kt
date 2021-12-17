@@ -1,15 +1,17 @@
 package com.julio.latterstosaraswati.viewModel
 
 import android.util.Log
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.julio.latterstosaraswati.dao.UserEntity
 import com.julio.latterstosaraswati.repository.UserRepository
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
-    var login = false
+    val mutableLogin : MutableLiveData<Boolean> = MutableLiveData()
 
 
     //Database functions
@@ -18,7 +20,7 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
         viewModelScope.launch {
             try {
-                userRepository.registerNewUser(newUser)
+                 userRepository.registerNewUser(newUser)
             }catch (e: Exception){
                 Log.d("Error creating new user", e.toString())
             }
@@ -30,9 +32,7 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
         viewModelScope.launch {
             try {
                 val response = userRepository.getUserInDb(userName)
-                if (response.password == password){
-                    login = true
-                }
+                mutableLogin.value = response.password == password
             }catch (e: Exception){
                 Log.d("Error getting user", e.toString())
             }

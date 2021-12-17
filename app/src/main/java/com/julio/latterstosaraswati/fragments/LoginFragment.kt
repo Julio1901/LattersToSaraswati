@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.julio.latterstosaraswati.R
 import com.julio.latterstosaraswati.databinding.FragmentCreateAnAccountBinding
@@ -52,13 +53,16 @@ class LoginFragment : Fragment() {
 
             mainViewModel.login(name, password)
 
-            if(mainViewModel.login){
+        }
+
+        mainViewModel.mutableLogin.observe(this, Observer {
+            if (it){
                 val action = LoginFragmentDirections.actionLoginToHome()
                 findNavController().navigate(action)
-                //TODO: Make method here to reset the login variable in viewModel how to false
-                //TODO: Replace login variable to a observer
+                //Restore default
+                mainViewModel.mutableLogin.value = false
             }
-        }
+        })
     }
 
 
