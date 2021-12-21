@@ -6,7 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-@Database(version = 1, entities = [UserEntity::class,PhraseBankEntity::class], exportSchema = true)
+@Database(version = 1, entities = [UserEntity::class,PhraseBankEntity::class, GratitudeOfTheDayEntity::class], exportSchema = true)
 abstract class DataBaseLattersToSaraswati : RoomDatabase(){
 
     abstract fun dao() : Dao
@@ -17,8 +17,6 @@ abstract class DataBaseLattersToSaraswati : RoomDatabase(){
             return Room.databaseBuilder(context, DataBaseLattersToSaraswati::class.java, "DataBaseLattersToSaraswati")
                 .build()
         }
-
-
     }
 
 

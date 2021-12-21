@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/showGratitudeRegisterToUserFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -31,4 +31,14 @@
         android:name="com.julio.latterstosaraswati.fragments.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/addRecordOfTheDayFragment"
+        android:name="com.julio.latterstosaraswati.AddRecordOfTheDayFragment"
+        android:label="fragment_add_record_of_the_day"
+        tools:layout="@layout/fragment_add_record_of_the_day" />
+    <fragment
+        android:id="@+id/showGratitudeRegisterToUserFragment"
+        android:name="com.julio.latterstosaraswati.ShowGratitudeRegisterToUserFragment"
+        android:label="fragment_show_gratitude_register_to_user"
+        tools:layout="@layout/fragment_show_gratitude_register_to_user" />
 </navigation>

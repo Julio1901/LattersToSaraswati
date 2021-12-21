@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
 import com.julio.latterstosaraswati.dao.UserEntity
 import com.julio.latterstosaraswati.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
@@ -12,9 +13,12 @@ import kotlinx.coroutines.launch
 class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     val mutableLogin : MutableLiveData<Boolean> = MutableLiveData()
+    val mutableGratitudeOfTheDay : MutableLiveData<GratitudeOfTheDayEntity> = MutableLiveData()
 
 
     //Database functions
+
+    //User table
 
     fun createNewUser(newUser : UserEntity){
 
@@ -39,5 +43,34 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
             }
         }
     }
+
+    //Gratitude table
+
+    fun createNewGratitudeRecord(newGratitudeRecord : GratitudeOfTheDayEntity){
+
+        viewModelScope.launch {
+            try {
+                userRepository.registerNewGratitudeOfTheDay(newGratitudeRecord)
+            }catch (e: Exception){
+                Log.d("Error gratitude record", e.toString())
+            }
+
+        }
+
+    }
+
+    fun getGratitudeById( id: Int){
+
+        viewModelScope.launch {
+            try {
+                mutableGratitudeOfTheDay.value = userRepository.getGratitudeOfTheDayById(id)
+            } catch (e: Exception){
+                Log.d("Error get gratitude", e.toString())
+            }
+        }
+    }
+
+
+
 
 }

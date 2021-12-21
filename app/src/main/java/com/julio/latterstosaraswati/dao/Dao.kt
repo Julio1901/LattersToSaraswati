@@ -9,10 +9,20 @@ import androidx.room.Query
 interface Dao {
     //TODO: Make query's SQL here
 
+    //  user table querys
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun registerUser(user: UserEntity) : Long
 
     @Query("SELECT * FROM user_table WHERE user_name like:userName")
     suspend fun getUserInDb(userName : String) : UserEntity
+
+
+    //Gratitude of the day querys
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun registerNewGratitudeOfTheDay(gratitudeRecord : GratitudeOfTheDayEntity) : Long
+
+    @Query("SELECT * FROM gratitude_of_the_day WHERE id like:id")
+    suspend fun getGratitudeRecordById(id: Int) : GratitudeOfTheDayEntity
+
 
 }
