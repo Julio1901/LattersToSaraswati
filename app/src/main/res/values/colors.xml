@@ -11,5 +11,6 @@
     <color name="red_alert">#FB2626</color>
     <color name="hint_default_color">#9F9F9F</color>
     <color name="transparent">#00FFFFFF</color>
+    <color name="yellowButtonHome">#FFEB3B</color>
 
 </resources>

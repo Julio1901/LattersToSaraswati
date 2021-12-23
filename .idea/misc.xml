@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/drawable/ic_add.xml" value="0.3605128205128205" />
         <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/activity_main.xml" value="0.3446153846153846" />
         <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_add_record_of_the_day.xml" value="0.33" />
-        <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_cardview_gratitude_preview.xml" value="0.67" />
+        <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_cardview_gratitude_preview.xml" value="0.5" />
         <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_create_an_account.xml" value="0.5" />
         <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="..\:/Users/usuario/Desktop/gitRepositories/LattersToSaraswati/app/src/main/res/layout/fragment_login.xml" value="0.33" />

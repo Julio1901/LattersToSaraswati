@@ -14,6 +14,7 @@ import android.widget.Button
 import android.widget.ImageView
 import androidx.core.graphics.drawable.toBitmap
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
 import com.julio.latterstosaraswati.databinding.FragmentAddRecordOfTheDayBinding
 import com.julio.latterstosaraswati.databinding.FragmentLoginBinding
@@ -63,8 +64,8 @@ class AddRecordOfTheDayFragment : Fragment() {
 
             val id = 0
             //TODO: Get it to system
-            val user = "Julio"
-            val day = "21/12/2021"
+            val user = mainViewModel.userName
+            val day = "22/12/2021"
             val highlightedWord = binding.editTextHighlightedWord.text.toString()
             val recordOfTheDay = binding.editTextRecordOfTheDay.text.toString()
             val pictureImageView : ImageView = binding.imageViewPhotoCaptured
@@ -72,6 +73,12 @@ class AddRecordOfTheDayFragment : Fragment() {
             val imagemCodificadaParaDb = imageDaoServiceInstance.saveImageInBank(imageBitMap)
             val mockGratitudeTwo = GratitudeOfTheDayEntity(id, user,day,highlightedWord,recordOfTheDay,imagemCodificadaParaDb)
             mainViewModel.createNewGratitudeRecord(mockGratitudeTwo)
+
+
+            val action = AddRecordOfTheDayFragmentDirections.actionAddNewGratitudeToHome()
+            findNavController().navigate(action)
+
+
         }
     }
 

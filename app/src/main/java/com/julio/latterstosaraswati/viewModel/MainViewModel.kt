@@ -15,6 +15,8 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     val mutableLogin : MutableLiveData<Boolean> = MutableLiveData()
     val mutableGratitudeOfTheDay : MutableLiveData<GratitudeOfTheDayEntity> = MutableLiveData()
+    var userName : String = ""
+
 
     var gratitudeListFlow = mutableListOf<GratitudeOfTheDayEntity>()
 

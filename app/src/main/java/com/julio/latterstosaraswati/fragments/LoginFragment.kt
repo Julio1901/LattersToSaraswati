@@ -62,6 +62,7 @@ class LoginFragment : Fragment() {
 
         mainViewModel.mutableLogin.observe(this, Observer {
             if (it){
+
                 val action = LoginFragmentDirections.actionLoginToHome()
                 findNavController().navigate(action)
                 //TODO: Create an function to restore default value

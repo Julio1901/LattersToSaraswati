@@ -7,6 +7,7 @@
     tools:context=".fragment_cardview_gratitude_preview">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_preview_gratitude"
         android:layout_width="203dp"
         android:layout_height="257dp"
         android:layout_marginStart="35dp"

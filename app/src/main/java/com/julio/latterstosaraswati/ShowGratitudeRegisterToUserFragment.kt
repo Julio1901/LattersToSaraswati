@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.navArgs
 import com.julio.latterstosaraswati.databinding.FragmentAddRecordOfTheDayBinding
 import com.julio.latterstosaraswati.databinding.FragmentShowGratitudeRegisterToUserBinding
 import com.julio.latterstosaraswati.repository.UserRepository
@@ -19,6 +20,9 @@ class ShowGratitudeRegisterToUserFragment : Fragment() {
 
     private var _binding: FragmentShowGratitudeRegisterToUserBinding? = null
     private val binding get() = _binding!!
+
+    private val args : ShowGratitudeRegisterToUserFragmentArgs by navArgs()
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,18 +39,26 @@ class ShowGratitudeRegisterToUserFragment : Fragment() {
         val mainViewModel: MainViewModel by viewModel{
             parametersOf(UserRepository(view.context))
         }
+
         //TODO: Replace it to get the database id
-        mainViewModel.getGratitudeById(2)
-        val imageDaoServiceInstance = ImageDaoService()
 
-        mainViewModel.mutableGratitudeOfTheDay.observe(this, Observer {
+    //        mainViewModel.getGratitudeById(2)
+//        val imageDaoServiceInstance = ImageDaoService()
+//
+//        mainViewModel.mutableGratitudeOfTheDay.observe(this, Observer {
+//
+//            binding.textViewUserName.setText(it.user)
+//            binding.textViewData.setText(it.day)
+//            binding.textViewHighlightedWord.setText(it.highlightedWord)
+//            binding.textViewRecordOfTheDay.setText(it.recordOfTheDay)
+//            val imageConverted = imageDaoServiceInstance.convertBankImageToDisplay(it.picture)
+//            binding.imageViewPicture.setImageBitmap(imageConverted)
+//        })
 
-            binding.textViewUserName.setText(it.user)
-            binding.textViewData.setText(it.day)
-            binding.textViewHighlightedWord.setText(it.highlightedWord)
-            binding.textViewRecordOfTheDay.setText(it.recordOfTheDay)
-            val imageConverted = imageDaoServiceInstance.convertBankImageToDisplay(it.picture)
-            binding.imageViewPicture.setImageBitmap(imageConverted)
-        })
+        binding.textViewUserName.setText(args.user)
+        binding.textViewData.setText(args.day)
+        binding.textViewHighlightedWord.setText(args.highlightedWord)
+        binding.textViewRecordOfTheDay.setText(args.recordOfTheDay)
+        binding.imageViewPicture.setImageBitmap(args.picture)
     }
 }

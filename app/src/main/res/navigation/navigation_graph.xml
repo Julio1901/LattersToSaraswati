@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -30,15 +30,44 @@
         android:id="@+id/homeFragment"
         android:name="com.julio.latterstosaraswati.fragments.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home_to_add_new_gratitude_register"
+            app:destination="@id/addRecordOfTheDayFragment" />
+        <action
+            android:id="@+id/action_home_to_display_an_register"
+            app:destination="@id/showGratitudeRegisterToUserFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addRecordOfTheDayFragment"
         android:name="com.julio.latterstosaraswati.AddRecordOfTheDayFragment"
         android:label="fragment_add_record_of_the_day"
-        tools:layout="@layout/fragment_add_record_of_the_day" />
+        tools:layout="@layout/fragment_add_record_of_the_day" >
+        <action
+            android:id="@+id/action_add_new_gratitude_to_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/showGratitudeRegisterToUserFragment"
         android:name="com.julio.latterstosaraswati.ShowGratitudeRegisterToUserFragment"
         android:label="fragment_show_gratitude_register_to_user"
-        tools:layout="@layout/fragment_show_gratitude_register_to_user" />
+        tools:layout="@layout/fragment_show_gratitude_register_to_user" >
+        <argument
+            android:name="id"
+            app:argType="integer" />
+        <argument
+            android:name="user"
+            app:argType="string" />
+        <argument
+            android:name="day"
+            app:argType="string" />
+        <argument
+            android:name="highlightedWord"
+            app:argType="string" />
+        <argument
+            android:name="recordOfTheDay"
+            app:argType="string" />
+        <argument android:name="picture"
+            app:argType="android.graphics.Bitmap" />
+    </fragment>
 </navigation>
