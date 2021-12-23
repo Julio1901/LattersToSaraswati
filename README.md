@@ -8,7 +8,7 @@
 - Cadastro de usuário
 - Cadastro de registro de gratidão:
   - Registre os motivos pelos quais é grato no dia de hoje e relembre eles mais tarde quando quiser
-  -Capture uma imagem que deseja lembrar desse dia para anexar ao seu registro.
+  - Capture uma imagem que deseja lembrar desse dia para anexar ao seu registro.
 
 -Tela de Login
 <br/>
