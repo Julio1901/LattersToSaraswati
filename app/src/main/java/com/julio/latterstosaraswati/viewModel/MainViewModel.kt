@@ -8,12 +8,23 @@ import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
 import com.julio.latterstosaraswati.dao.UserEntity
 import com.julio.latterstosaraswati.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     val mutableLogin : MutableLiveData<Boolean> = MutableLiveData()
     val mutableGratitudeOfTheDay : MutableLiveData<GratitudeOfTheDayEntity> = MutableLiveData()
+
+    var gratitudeListFlow = mutableListOf<GratitudeOfTheDayEntity>()
+
+    lateinit var  myQueryResponse : Flow<List<GratitudeOfTheDayEntity>>
+
+    init {
+        viewModelScope.launch {
+            myQueryResponse = userRepository.getAllGratitudeRegisters()
+        }
+    }
 
 
     //Database functions
@@ -70,7 +81,17 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
         }
     }
 
+    fun updateGratitudeRegistersToRecyclerView(){
 
+        viewModelScope.launch {
+            myQueryResponse = userRepository.getAllGratitudeRegisters()
 
+            myQueryResponse.collect {
+                it.forEach {
+                    gratitudeListFlow.add(it)
+                }
+            }
+        }
+    }
 
 }

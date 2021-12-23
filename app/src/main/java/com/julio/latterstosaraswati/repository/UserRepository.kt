@@ -5,6 +5,7 @@ import android.util.Log
 import com.julio.latterstosaraswati.dao.DataBaseLattersToSaraswati
 import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
 import com.julio.latterstosaraswati.dao.UserEntity
+import kotlinx.coroutines.flow.Flow
 
 class UserRepository (context: Context) {
 
@@ -30,6 +31,10 @@ class UserRepository (context: Context) {
 
     suspend fun getGratitudeOfTheDayById(id : Int) : GratitudeOfTheDayEntity{
         return daoInstance.getGratitudeRecordById(id)
+    }
+
+    fun getAllGratitudeRegisters(): Flow<List<GratitudeOfTheDayEntity>>{
+        return daoInstance.getAllGratitudeRegisters()
     }
 
 
