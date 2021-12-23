@@ -11,21 +11,27 @@
   -Capture uma imagem que deseja lembrar desse dia para anexar ao seu registro.
 
 -Tela de Login
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/01.PNG'>
 
 -Tela de Cadastro
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/02.PNG'>
 
 -Validação de campos preenchidos
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/03.PNG'>
 
 -Alera de user name ou senha incorretos
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/04.PNG'>
 
 -Home do app
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/05.PNG'>
 
 -Adicionando novo registro de gratidão
+<br/>
 <img src='https://github.com/Julio1901/rabbit_english/blob/master/readme_images/organizado/06.PNG'>
 
 -Capturando imagem para adicionar ao registro
