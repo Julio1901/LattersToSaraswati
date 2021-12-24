@@ -4,6 +4,7 @@ import android.content.Context
 import android.util.Log
 import com.julio.latterstosaraswati.dao.DataBaseLattersToSaraswati
 import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
+import com.julio.latterstosaraswati.dao.PhraseBankEntity
 import com.julio.latterstosaraswati.dao.UserEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -37,6 +38,11 @@ class UserRepository (context: Context) {
         return daoInstance.getAllGratitudeRegisters()
     }
 
+    //Phrase Bank table
 
+    suspend fun registerNewPhraseInBank(newPhrase : PhraseBankEntity){
+        daoInstance.registerNewPhraseInBank(newPhrase)
+
+    }
 
 }

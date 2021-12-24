@@ -40,21 +40,6 @@ class ShowGratitudeRegisterToUserFragment : Fragment() {
             parametersOf(UserRepository(view.context))
         }
 
-        //TODO: Replace it to get the database id
-
-    //        mainViewModel.getGratitudeById(2)
-//        val imageDaoServiceInstance = ImageDaoService()
-//
-//        mainViewModel.mutableGratitudeOfTheDay.observe(this, Observer {
-//
-//            binding.textViewUserName.setText(it.user)
-//            binding.textViewData.setText(it.day)
-//            binding.textViewHighlightedWord.setText(it.highlightedWord)
-//            binding.textViewRecordOfTheDay.setText(it.recordOfTheDay)
-//            val imageConverted = imageDaoServiceInstance.convertBankImageToDisplay(it.picture)
-//            binding.imageViewPicture.setImageBitmap(imageConverted)
-//        })
-
         binding.textViewUserName.setText(args.user)
         binding.textViewData.setText(args.day)
         binding.textViewHighlightedWord.setText(args.highlightedWord)

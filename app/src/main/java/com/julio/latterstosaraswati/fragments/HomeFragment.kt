@@ -49,6 +49,9 @@ class HomeFragment : Fragment() {
         }
 
         val recyclerViewHome = view.findViewById<RecyclerView>(R.id.recycler_view_home)
+        val btnAddNewGratitudeRegister = binding.btnAddNewGartitude
+        val btnAddNewPhrase = binding.btnAddNewPhrase
+
 
         mainViewModel.updateGratitudeRegistersToRecyclerView()
 
@@ -60,13 +63,17 @@ class HomeFragment : Fragment() {
 
         recyclerViewHome.setHasFixedSize(true)
 
-        val btnAddNewGratitudeRegister = binding.btnAddNewGartitude
-
         btnAddNewGratitudeRegister.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeToAddNewGratitudeRegister()
             findNavController().navigate(action)
         }
-    }
 
+        btnAddNewPhrase.setOnClickListener {
+            val action = HomeFragmentDirections.actionHomeToAddNewPhrase()
+            findNavController().navigate(action)
+        }
+
+
+    }
 
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.julio.latterstosaraswati.dao.GratitudeOfTheDayEntity
+import com.julio.latterstosaraswati.dao.PhraseBankEntity
 import com.julio.latterstosaraswati.dao.UserEntity
 import com.julio.latterstosaraswati.repository.UserRepository
 import kotlinx.coroutines.flow.Flow
@@ -15,7 +16,7 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
 
     val mutableLogin : MutableLiveData<Boolean> = MutableLiveData()
     val mutableGratitudeOfTheDay : MutableLiveData<GratitudeOfTheDayEntity> = MutableLiveData()
-    var userName : String = ""
+    var userNameToApplication : String = ""
 
 
     var gratitudeListFlow = mutableListOf<GratitudeOfTheDayEntity>()
@@ -92,6 +93,18 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
                 it.forEach {
                     gratitudeListFlow.add(it)
                 }
+            }
+        }
+    }
+
+    //Phrase Bank table
+
+    fun registerNewPhraseInBank(newPhrase : PhraseBankEntity){
+        viewModelScope.launch {
+            try {
+                userRepository.registerNewPhraseInBank(newPhrase)
+            }catch (e: Exception){
+                Log.d("Register phrase error", e.toString())
             }
         }
     }

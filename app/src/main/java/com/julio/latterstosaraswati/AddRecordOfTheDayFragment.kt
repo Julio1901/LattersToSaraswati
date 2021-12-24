@@ -64,7 +64,7 @@ class AddRecordOfTheDayFragment : Fragment() {
 
             val id = 0
             //TODO: Get it to system
-            val user = mainViewModel.userName
+            val user = "Julio"
             val day = "22/12/2021"
             val highlightedWord = binding.editTextHighlightedWord.text.toString()
             val recordOfTheDay = binding.editTextRecordOfTheDay.text.toString()

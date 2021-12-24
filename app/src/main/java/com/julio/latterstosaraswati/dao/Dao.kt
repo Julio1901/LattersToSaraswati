@@ -29,5 +29,9 @@ interface Dao {
     @Query("SELECT * FROM gratitude_of_the_day  ORDER BY id ASC")
     fun getAllGratitudeRegisters() : Flow<List<GratitudeOfTheDayEntity>>
 
+    //Phrase Bank querys
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    suspend fun registerNewPhraseInBank(newPhrase : PhraseBankEntity)
+
 
 }

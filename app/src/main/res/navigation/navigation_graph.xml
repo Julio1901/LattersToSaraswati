@@ -37,6 +37,9 @@
         <action
             android:id="@+id/action_home_to_display_an_register"
             app:destination="@id/showGratitudeRegisterToUserFragment" />
+        <action
+            android:id="@+id/action_home_to_add_new_phrase"
+            app:destination="@id/addNewPhraseFragment" />
     </fragment>
     <fragment
         android:id="@+id/addRecordOfTheDayFragment"
@@ -69,5 +72,14 @@
             app:argType="string" />
         <argument android:name="picture"
             app:argType="android.graphics.Bitmap" />
+    </fragment>
+    <fragment
+        android:id="@+id/addNewPhraseFragment"
+        android:name="com.julio.latterstosaraswati.fragments.AddNewPhraseFragment"
+        android:label="fragment_add_new_phrase"
+        tools:layout="@layout/fragment_add_new_phrase" >
+        <action
+            android:id="@+id/action_new_phrase_to_home"
+            app:destination="@id/homeFragment" />
     </fragment>
 </navigation>

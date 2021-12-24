@@ -13,5 +13,6 @@ class PhraseBankEntity (
     val writerUser : String,
     @ColumnInfo(name = "creation_date")
     val creationDate : String,
-    val phrase : String
+    val phrase : String,
+    val phraseOrigin : String
     )
