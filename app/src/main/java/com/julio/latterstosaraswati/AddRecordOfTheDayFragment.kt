@@ -25,6 +25,8 @@ import kotlinx.android.synthetic.main.fragment_add_record_of_the_day.*
 import kotlinx.android.synthetic.main.fragment_home.*
 import org.koin.android.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class AddRecordOfTheDayFragment : Fragment() {
@@ -62,10 +64,14 @@ class AddRecordOfTheDayFragment : Fragment() {
 
             val imageDaoServiceInstance = ImageDaoService()
 
+            val dateFormat = SimpleDateFormat("dd-MM-yyyy")
+            val actualDateFormated = dateFormat.format(Date())
+
             val id = 0
             //TODO: Get it to system
             val user = "Julio"
-            val day = "22/12/2021"
+            //val day = "22/12/2021"
+            val day = actualDateFormated
             val highlightedWord = binding.editTextHighlightedWord.text.toString()
             val recordOfTheDay = binding.editTextRecordOfTheDay.text.toString()
             val pictureImageView : ImageView = binding.imageViewPhotoCaptured

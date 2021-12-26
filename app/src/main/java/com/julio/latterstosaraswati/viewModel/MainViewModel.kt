@@ -97,6 +97,29 @@ class MainViewModel(private val userRepository: UserRepository) : ViewModel() {
         }
     }
 
+     fun deleteGratitude(gratitudeRegister : GratitudeOfTheDayEntity){
+
+        viewModelScope.launch {
+            try {
+                userRepository.deleteGratitude(gratitudeRegister)
+            }catch (e : Exception){
+                Log.d("Error delete gratitude", e.toString())
+            }
+        }
+    }
+
+    fun updateGratitude(gratitudeRegister: GratitudeOfTheDayEntity){
+        viewModelScope.launch {
+            try {
+                userRepository.updateGratitude(gratitudeRegister)
+            }catch (e : Exception){
+                Log.d("Error update gratitude", e.toString())
+            }
+        }
+    }
+
+
+
     //Phrase Bank table
 
     fun registerNewPhraseInBank(newPhrase : PhraseBankEntity){

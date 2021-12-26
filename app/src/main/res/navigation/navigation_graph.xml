@@ -72,6 +72,9 @@
             app:argType="string" />
         <argument android:name="picture"
             app:argType="android.graphics.Bitmap" />
+        <action
+            android:id="@+id/action_show_gratitude_to_home"
+            app:destination="@id/homeFragment" />
     </fragment>
     <fragment
         android:id="@+id/addNewPhraseFragment"

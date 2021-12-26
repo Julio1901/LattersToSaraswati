@@ -38,6 +38,14 @@ class UserRepository (context: Context) {
         return daoInstance.getAllGratitudeRegisters()
     }
 
+    suspend fun deleteGratitude(gratitudeRegister : GratitudeOfTheDayEntity){
+        daoInstance.deleteGratitude(gratitudeRegister)
+    }
+
+    suspend fun updateGratitude(gratitudeRegister: GratitudeOfTheDayEntity){
+        daoInstance.updateGratitude(gratitudeRegister)
+    }
+
     //Phrase Bank table
 
     suspend fun registerNewPhraseInBank(newPhrase : PhraseBankEntity){

@@ -1,9 +1,7 @@
 package com.julio.latterstosaraswati.dao
 
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 
@@ -28,6 +26,13 @@ interface Dao {
 
     @Query("SELECT * FROM gratitude_of_the_day  ORDER BY id ASC")
     fun getAllGratitudeRegisters() : Flow<List<GratitudeOfTheDayEntity>>
+
+    @Delete
+    suspend fun deleteGratitude(gratitudeRegister : GratitudeOfTheDayEntity)
+
+    @Update
+    suspend fun updateGratitude(gratitudeRegister: GratitudeOfTheDayEntity)
+
 
     //Phrase Bank querys
     @Insert(onConflict = OnConflictStrategy.IGNORE)
