@@ -54,12 +54,16 @@
 
 
 #### Features que estão sendo desenvolvidas
-- Registro de frases do usuário
-  - O usuário poderá registrar alguma frase ou citação que tenha ouvido durante o dia para que ela seja exibida em sua home posteriormente
-- Exibição diária de uma das frases cadastradas pelo usuário na home
+- Exibição diária de uma das frases cadastradas pelo usuário na home de maneira aleatória
 - Integração com Instagram para que o usuário possa compartilhar a frase sorteada do dia com seus seguidores num layout agradável
-- Edição e deleção de registros
 - Edição e deleção de frases
+
+
+### Features ativas
+- Diário de gratidão
+  - O usuário registra as coisas pelas quais é grato no dia e captura uma imagem para anexar ao registro
+- Registro de frases do usuário
+  - O usuário pode registrar alguma frase ou citação que tenha ouvido durante o dia para que ela seja exibida em sua home posteriormente
 
 
 ##### Como rodar o projeto
