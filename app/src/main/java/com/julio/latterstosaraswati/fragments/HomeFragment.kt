@@ -1,5 +1,7 @@
 package com.julio.latterstosaraswati.fragments
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -51,7 +53,7 @@ class HomeFragment : Fragment() {
         val recyclerViewHome = view.findViewById<RecyclerView>(R.id.recycler_view_home)
         val btnAddNewGratitudeRegister = binding.btnAddNewGartitude
         val btnAddNewPhrase = binding.btnAddNewPhrase
-
+        val btnSharePhrase = binding.btnSharePhrase
 
         mainViewModel.updateGratitudeRegistersToRecyclerView()
 
@@ -71,6 +73,28 @@ class HomeFragment : Fragment() {
         btnAddNewPhrase.setOnClickListener {
             val action = HomeFragmentDirections.actionHomeToAddNewPhrase()
             findNavController().navigate(action)
+        }
+
+        btnSharePhrase.setOnClickListener {
+           // val stickerAssetUri = Uri.parse("src/main/res/drawable/ingyang.PNG")
+            val stickerAssetUri = Uri.parse("android.resource://com.julio.latterstosaraswati/" + R.drawable.ingyang)
+            val sourceApplication = "com.julio.latterstosaraswati"
+
+            val intent = Intent("com.instagram.share.ADD_TO_STORY")
+            intent.putExtra("source_application", sourceApplication)
+            //intent.setType(MEDIA_TYPE_JPEG)
+            intent.setType("JPEG")
+            intent.putExtra("interactive_asset_uri", stickerAssetUri);
+            intent.putExtra("top_background_color", "#33FF33");
+            intent.putExtra("bottom_background_color", "#FF00FF");
+
+            val activity = activity!!
+            activity.grantUriPermission(
+                "com.instagram.android", stickerAssetUri, Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            if (activity.getPackageManager().resolveActivity(intent, 0) != null) {
+                activity.startActivityForResult(intent, 0);
+            }
+
         }
 
 
